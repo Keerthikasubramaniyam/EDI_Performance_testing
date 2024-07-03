@@ -1,0 +1,8 @@
+node_modules
+env.json
+my-k6-script.js
+*.html
+Junks/*
+loadtest.js
+HAR
+CSVs
