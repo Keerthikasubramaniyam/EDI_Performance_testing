@@ -1,95 +1,86 @@
 {
   "records": [
-    { "TextColumn": "Toyota", "NumberColumn": "110000", "DecimalColumn": "2.00", "EmailColumn": "Toyota@gmail.com", "DateColumn": "2024-01-29", "DateTimeColumn": "2024-01-25 18:30", "CheckBoxColumn": "false", "SingleSelectColumn": 1 },
+    { "textcolumn": "Toyota", "numbercolumn": "110000", "decimalcolumn": "2.00", "emailcolumn": "Toyota@gmail.com", "datecolumn": "2024-01-29", "checkboxcolumn": "false", "singleselectcolumn": 1 },
     {
-      "TextColumn": "Tesla",
-      "NumberColumn": "20000",
-      "DecimalColumn": "50000",
-      "EmailColumn": "Tesla@gmail.com",
-      "DateColumn": "2024-02-29",
-      "DateTimeColumn": "2024-02-25 18:30",
-      "CheckBoxColumn": "true",
-      "SingleSelectColumn": 2
+      "textcolumn": "Tesla",
+      "numbercolumn": "20000",
+      "decimalcolumn": "5000.0",
+      "emailcolumn": "Tesla@gmail.com",
+      "datecolumn": "2024-02-29",
+      "checkboxcolumn": "true",
+      "singleselectcolumn": 2
     },
     {
-      "TextColumn": "Honda",
-      "NumberColumn": "30000",
-      "DecimalColumn": "56789",
-      "EmailColumn": "Honda@gmail.com",
-      "DateColumn": "2024-03-29",
-      "DateTimeColumn": "2024-03-25 18:30",
-      "CheckBoxColumn": "true",
-      "SingleSelectColumn": 3
+      "textcolumn": "Honda",
+      "numbercolumn": "30000",
+      "decimalcolumn": "5678.9",
+      "emailcolumn": "Honda@gmail.com",
+      "datecolumn": "2024-03-29",
+      "checkboxcolumn": "true",
+      "singleselectcolumn": 3
     },
     {
-      "TextColumn": "Hyundai ",
-      "NumberColumn": "40000",
-      "DecimalColumn": "456789",
-      "EmailColumn": "Hyundai@gmail.com",
-      "DateColumn": "2024-04-29",
-      "DateTimeColumn": "2024-04-25 18:30",
-      "CheckBoxColumn": "false",
-      "SingleSelectColumn": 4
+      "textcolumn": "Hyundai ",
+      "numbercolumn": "40000",
+      "decimalcolumn": "45678.9",
+      "emailcolumn": "Hyundai@gmail.com",
+      "datecolumn": "2024-04-29",
+      "checkboxcolumn": "false",
+      "singleselectcolumn": 4
     },
     {
-      "TextColumn": "Audi",
-      "NumberColumn": "50000",
-      "DecimalColumn": "23456",
-      "EmailColumn": "Audi@gmail.com",
-      "DateColumn": "2024-05-29",
-      "DateTimeColumn": "2024-05-25 18:30",
-      "CheckBoxColumn": "false",
-      "SingleSelectColumn": 5
+      "textcolumn": "Audi",
+      "numbercolumn": "50000",
+      "decimalcolumn": "2345.6",
+      "emailcolumn": "Audi@gmail.com",
+      "datecolumn": "2024-05-29",
+      "checkboxcolumn": "false",
+      "singleselectcolumn": 5
     },
     {
-      "TextColumn": "Mahindra",
-      "NumberColumn": "60000",
-      "DecimalColumn": "890575",
-      "EmailColumn": "Mahindra@gmail.com",
-      "DateColumn": "2024-06-29",
-      "DateTimeColumn": "2024-06-25 18:30",
-      "CheckBoxColumn": "false",
-      "SingleSelectColumn": 6
+      "textcolumn": "Mahindra",
+      "numbercolumn": "60000",
+      "decimalcolumn": "89057.5",
+      "emailcolumn": "Mahindra@gmail.com",
+      "datecolumn": "2024-06-29",
+      "checkboxcolumn": "false",
+      "singleselectcolumn": 6
     },
     {
-      "TextColumn": "Benz",
-      "NumberColumn": "70000",
-      "DecimalColumn": "678997",
-      "EmailColumn": "Benz@gmail.com",
-      "DateColumn": "2024-07-29",
-      "DateTimeColumn": "2024-07-25 18:30",
-      "CheckBoxColumn": "true",
-      "SingleSelectColumn": 7
+      "textcolumn": "Benz",
+      "numbercolumn": "70000",
+      "decimalcolumn": "6789.97",
+      "emailcolumn": "Benz@gmail.com",
+      "datecolumn": "2024-07-29",
+      "checkboxcolumn": "true",
+      "singleselectcolumn": 7
     },
     {
-      "TextColumn": "Skoda",
-      "NumberColumn": "80000",
-      "DecimalColumn": "45868",
-      "EmailColumn": "Skoda@gmail.com",
-      "DateColumn": "2024-08-29",
-      "DateTimeColumn": "2024-08-25 18:30",
-      "CheckBoxColumn": "true",
-      "SingleSelectColumn": 8
+      "textcolumn": "Skoda",
+      "numbercolumn": "80000",
+      "decimalcolumn": "458.68",
+      "emailcolumn": "Skoda@gmail.com",
+      "datecolumn": "2024-08-29",
+      "checkboxcolumn": "true",
+      "singleselectcolumn": 8
     },
     {
-      "TextColumn": "BMW",
-      "NumberColumn": "90000",
-      "DecimalColumn": "47900",
-      "EmailColumn": "BMW@gmail.com",
-      "DateColumn": "2024-09-29",
-      "DateTimeColumn": "2024-09-25 18:30",
-      "CheckBoxColumn": "false",
-      "SingleSelectColumn": 9
+      "textcolumn": "BMW",
+      "numbercolumn": "90000",
+      "decimalcolumn": "479.00",
+      "emailcolumn": "BMW@gmail.com",
+      "datecolumn": "2024-09-29",
+      "checkboxcolumn": "false",
+      "singleselectcolumn": 9
     },
     {
-      "TextColumn": "Ferrari",
-      "NumberColumn": "100000",
-      "DecimalColumn": "567890",
-      "EmailColumn": "Ferrari@gmail.com",
-      "DateColumn": "2024-10-29",
-      "DateTimeColumn": "2024-10-25 18:30",
-      "CheckBoxColumn": "true",
-      "SingleSelectColumn": 2
+      "textcolumn": "Ferrari",
+      "numbercolumn": "100000",
+      "decimalcolumn": "5678.90",
+      "emailcolumn": "Ferrari@gmail.com",
+      "datecolumn": "2024-10-29",
+      "checkboxcolumn": "true",
+      "singleselectcolumn": 2
     }
   ]
 }

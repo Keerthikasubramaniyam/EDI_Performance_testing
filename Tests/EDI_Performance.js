@@ -57,8 +57,8 @@ export const options = {
   },
 };
 const filepath = "CompletedJobs.txt";
-const raw_Payload = open("/TestData/30k_Sample.json");
-const modifiedNoOfRecords = 5;
+const raw_Payload = open("/TestData/1500rows_AmazonRedShift.json");
+const modifiedNoOfRecords = 1500;
 // console.log(data)
 export function sampleEDIFlow() {
   const updated_payload = updatedPayLoadValues(raw_Payload, modifiedNoOfRecords);
