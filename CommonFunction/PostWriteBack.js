@@ -1,20 +1,41 @@
-import { check } from "k6";
-import http from "k6/http";
-
-import { CommonValidatorHandler } from "../CommonReusables.js";
+const axios = require("axios");
+const FormData = require("form-data");
+const { readFileSync, writeFileSync } = require("fs");
+require("dotenv").config({ path: __dirname + "/.env" });
+const logger = require("../log4js"); // Adjust the file name and path accordingly
 module.exports = {
-  POST_EDIWriteBack(envVariables, testdata, statusToValidate) {
-    // console.log("testdata-------------------------", testdata);
-    const response = http.post(`${envVariables.BASE_URL}/v1/mde/writeback/`, testdata.body(), {
-      headers: {
-        Authorization: `Bearer ${envVariables.BEARER_TOKEN}`,
-        "Cache-Control": "no-cache",
-        "content-type": "multipart/form-data; boundary=" + testdata.boundary,
-      },
-      // tags: { name: "POST/EDIWriteback" },
-    });
-    const result = CommonValidatorHandler("POST/EDIWriteback", response, statusToValidate, envVariables);
-    // console.log(result);
-    return { response, result };
+  async POST_EDIWriteBack(url, data = {}, isFormData = false, token = "", comments = "") {
+    try {
+      console.log("Sending POST request to:", url);
+      logger.debug(`${comments} --> Sending POST request to: ${url}`);
+      let headers = {};
+      let postData;
+      if (isFormData) {
+        postData = new FormData();
+        for (const key in data) {
+          // console.log(key);
+          await postData.append(key, JSON.stringify(data[key]));
+          // console.log(postData);
+        }
+        headers = postData.getHeaders();
+      } else {
+        postData = data;
+        headers["Content-Type"] = "multipart/form-data; boundary=" + postData.boundary;
+      }
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+      logger.debug("request");
+      await writeFileSync("compressed.txt", JSON.stringify(postData));
+      const response = await axios.post(`${url}/v1/mde/writeback/`, postData, { headers });
+      logger.debug("Response");
+      logger.debug(`${comments} --> POST request successful:${JSON.stringify(response.data)}`);
+      return response.data;
+    } catch (error) {
+      logger.error(`${comments} --> POST request failed: ${error.meassage}`);
+      logger.error(error);
+      console.error("POST request failed:", error.meassage);
+      if (comments != "writeback") throw error;
+    }
   },
 };
