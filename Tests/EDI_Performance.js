@@ -14,11 +14,6 @@ if (__ENV.TEST_2_RUN) {
   TEST_2_RUN = __ENV.TEST_2_RUN;
 }
 
-// const userInput = {
-//   virtualUser: __VU,
-//   currentItertion:__ITER,
-// };
-
 let ExecutionOptions_Scenarios;
 switch (TEST_2_RUN) {
   case ExecutionType.smoke:
@@ -27,7 +22,7 @@ switch (TEST_2_RUN) {
         exec: "sampleEDIFlow",
         executor: "per-vu-iterations", //using per virtual users profile
         vus: 1,
-        // maxDuration: "10s",
+        maxDuration: "10s",
         iterations: 1,
       },
     };
@@ -57,8 +52,8 @@ export const options = {
   },
 };
 const filepath = "CompletedJobs.txt";
-const raw_Payload = open("/TestData/1500rows_AmazonRedShift.json");
-const modifiedNoOfRecords = 1500;
+const raw_Payload = open("../TestData/remainingDB/30k_WithDateColumn.json");
+const modifiedNoOfRecords = envVariables.NOOFROWS;
 // console.log(data)
 export function sampleEDIFlow() {
   const updated_payload = updatedPayLoadValues(raw_Payload, modifiedNoOfRecords);
