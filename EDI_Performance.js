@@ -1,13 +1,15 @@
-const { updatedPayLoadValues } = require("./CommonReusables.js");
-const { POST_EDIWriteBack } = require("./CommonFunction/PostWriteBack.js");
+const { updatedPayLoadValues } = require("./CommonFunction/CommonReusables.js");
+const { POST_EDIWriteBack } = require("./CommonFunction/POST_EDIWriteBack.js");
 const { readFileSync, writeFileSync } = require("fs");
 require("dotenv").config({ path: __dirname + "/.env" });
+
 process.env.START_TIME = Date.now();
 const filepath = "CompletedJobs.txt";
-const inputJsonFile = JSON.parse(readFileSync(`./TestData/remainingDB/30k_WithDateColumn.json`, "utf8"));
-const NoOfRecordModified = process.env.TOTAL_ROWS;
+const inputJsonFile = JSON.parse(readFileSync(`./TestData/snowFlake/30k_WithDateColumn.json`, "utf8"));
+const noOfRecordModified = process.env.TOTAL_ROWS;
+
 async function EDITableBulkEditorFlow() {
-  const updated_payload = await updatedPayLoadValues(inputJsonFile, NoOfRecordModified);
+  const updated_payload = await updatedPayLoadValues(inputJsonFile, noOfRecordModified);
   const wbPayload = {
     data: updated_payload.currentJsonPayload,
   };
