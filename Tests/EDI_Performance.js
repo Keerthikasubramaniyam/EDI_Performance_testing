@@ -3,7 +3,7 @@ import { group, check } from "k6";
 import { sleep } from "k6";
 import file from "k6/x/file";
 let envVariables = JSON.parse(open("../env.json"));
-import { ExecutionType, updatedPayLoadValues } from "../CommonReusables.js";
+import { ExecutionType, updatedPayLoadValues } from "../CommonFunction/CommonReusables.js";
 import { FormData } from "https://jslib.k6.io/formdata/0.0.2/index.js";
 import { POST_EDIWriteBack } from "../CommonFunction/PostWriteBack.js";
 
@@ -22,7 +22,7 @@ switch (TEST_2_RUN) {
         exec: "sampleEDIFlow",
         executor: "per-vu-iterations", //using per virtual users profile
         vus: 1,
-        maxDuration: "10s",
+        maxDuration: "150s",
         iterations: 1,
       },
     };
@@ -34,8 +34,8 @@ switch (TEST_2_RUN) {
         executor: "ramping-vus",
         startVUs: 0,
         stages: [
-          { duration: "10s", target: userSize },
-          { duration: "15s", target: userSize },
+          { duration: "10s", target: 15 },
+          { duration: "15s", target: 15 },
           { duration: "10s", target: 0 },
         ],
         gracefulRampDown: "30s",
@@ -52,7 +52,7 @@ export const options = {
   },
 };
 const filepath = "CompletedJobs.txt";
-const raw_Payload = open("../TestData/remainingDB/30k_WithDateColumn.json");
+const raw_Payload = open("../TestData/snowFlake/30k_WithDateColumn.json");
 const modifiedNoOfRecords = envVariables.NOOFROWS;
 // console.log(data)
 export function sampleEDIFlow() {

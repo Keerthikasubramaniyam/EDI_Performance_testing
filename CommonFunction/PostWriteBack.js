@@ -1,7 +1,7 @@
 import { check } from "k6";
 import http from "k6/http";
 
-import { CommonValidatorHandler } from "../CommonReusables.js";
+import { CommonValidatorHandler } from "../CommonFunction/CommonReusables.js";
 module.exports = {
   POST_EDIWriteBack(envVariables, testdata, statusToValidate) {
     // console.log("testdata-------------------------", testdata);

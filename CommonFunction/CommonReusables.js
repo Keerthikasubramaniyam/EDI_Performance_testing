@@ -1,6 +1,6 @@
 import lzutf8 from "https://unpkg.com/lzutf8";
 import { check } from "k6";
-let envVariables = JSON.parse(open("./env.json"));
+let envVariables = JSON.parse(open("../env.json"));
 const modifiedData = JSON.parse(open("/TestData/generateNewData.json"));
 module.exports = {
   ExecutionType: {
