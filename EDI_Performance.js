@@ -4,7 +4,7 @@ const { readFileSync, writeFileSync } = require("fs");
 require("dotenv").config({ path: __dirname + "/.env" });
 process.env.START_TIME = Date.now();
 const filepath = "CompletedJobs.txt";
-const inputJsonFile = JSON.parse(readFileSync(`./TestData/1500rows_AmazonRedShift.json`, "utf8"));
+const inputJsonFile = JSON.parse(readFileSync(`./TestData/remainingDB/30k_WithDateColumn.json`, "utf8"));
 const NoOfRecordModified = process.env.TOTAL_ROWS;
 async function EDITableBulkEditorFlow() {
   const updated_payload = await updatedPayLoadValues(inputJsonFile, NoOfRecordModified);
